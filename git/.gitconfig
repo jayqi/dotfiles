@@ -1,0 +1,12 @@
+[user]
+	name = Jay Qi
+	email = jayqi@users.noreply.github.com
+[core]
+	excludesfile = ~/.gitignore_global
+	editor = nano
+[color]
+	ui = true
+[status]
+	showUntrackedFiles = all
+[credential]
+	helper = osxkeychain
