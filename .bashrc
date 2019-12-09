@@ -29,3 +29,9 @@ bind "set menu-complete-display-prefix on"
 
 # ignore successive duplicates in history
 export HISTCONTROL=ignoredups
+
+# Created by `userpath` on 2019-11-13 04:14:50
+export PATH="$PATH:/Users/Jay/.local/bin"
+
+# pipx completions
+eval "$(register-python-argcomplete pipx)"
