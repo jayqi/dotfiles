@@ -3,9 +3,14 @@ echo "Sourcing .macos ..."
 # GitHub API Token to remove rate limit for Homebrew
 # Stored in macOS Keychain
 # https://coderwall.com/p/5ck85g/storing-secrets-in-the-macos-keychain
-export HOMEBREW_GITHUB_API_TOKEN=$(security find-generic-password -s 'HOMEBREW_GITHUB_API_TOKEN' -w)
+# export HOMEBREW_GITHUB_API_TOKEN=$(security find-generic-password -s 'HOMEBREW_GITHUB_API_TOKEN' -w)
 
 # Enable bash_completion
-if [ -f $(brew --prefix)/etc/bash_completion ]; then
-  . $(brew --prefix)/etc/bash_completion
-fi
+# First branch is for bash_completion@2 (preferred)
+# Fallback for bash_completion
+export BASH_COMPLETION_COMPAT_DIR="$(brew --prefix)/etc/bash_completion.d"
+if [[ -r "$(brew --prefix)/etc/profile.d/bash_completion.sh" ]]; then
+  . "$(brew --prefix)/etc/profile.d/bash_completion.sh";
+elif [[ -f $(brew --prefix)/etc/bash_completion ]]; then
+  . $(brew --prefix)/etc/bash_completion;
+fi;

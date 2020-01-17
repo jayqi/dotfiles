@@ -14,6 +14,7 @@ Use `brew cask`
 - [ ] Slack `slack`
 - [ ] KeepingYouAwake `keepingyouawake`
 - [ ] rectangle `rectangle`
+- [ ] docker `docker`
 
 ## Programs
 
@@ -30,8 +31,9 @@ Other
 - [ ] miniconda ([link](https://docs.conda.io/en/latest/miniconda.html))
 
 Set up standalone Jupyter
+
 - [ ] environment `conda create --name jupyter python=3.7 jupyterlab nb_conda_kernels`
-- [ ] path ``
+- [ ] path `export PATH="$PATH:$HOME/miniconda3/envs/jupyter/bin"`
 
 pipx
 

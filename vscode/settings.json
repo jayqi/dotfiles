@@ -1,0 +1,40 @@
+{
+    "telemetry.enableTelemetry": false,
+    "telemetry.enableCrashReporter": false,
+    "workbench.colorTheme": "One Dark Pro",
+    "workbench.iconTheme": "vscode-icons",
+    "terminal.integrated.shell.osx": "/usr/local/bin/bash",
+    "terminal.integrated.inheritEnv": false,
+    "editor.renderWhitespace": "all",
+    "editor.scrollBeyondLastLine": false,
+    "editor.minimap.enabled": false,
+    // General auto-formatting
+    "files.autoSave": "onFocusChange",
+    "files.insertFinalNewline": true,
+    "files.trimFinalNewlines": true,
+    "files.trimTrailingWhitespace": true,
+    "editor.formatOnType": true,
+    "editor.formatOnSave": true,
+    // Python
+    "python.formatting.provider": "black",
+    "python.formatting.blackPath": "${env:HOME}/.local/bin/black",
+    "[python]": {
+        "editor.rulers": [
+            88
+        ]
+    },
+    "autoDocstring.docstringFormat": "google",
+    "files.associations": {
+        "**/templates/*.html": "django-html",
+        "**/templates/*": "django-txt",
+        "**/requirements{/**,*}.{txt,in}": "pip-requirements"
+    },
+    // Javascript
+    "javascript.format.enable": false, // VS Code default formatter, don't need because we use eslint
+    "eslint.format.enable": true,
+    "[javascript]": {
+        "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+    },
+    "sqltools.telemetry": false,
+    "eslint.alwaysShowStatus": true
+}
