@@ -15,6 +15,7 @@ Use `brew cask`
 - [ ] KeepingYouAwake `keepingyouawake`
 - [ ] rectangle `rectangle`
 - [ ] docker `docker`
+- [ ] Java `java`
 
 ## Programs
 
@@ -25,6 +26,9 @@ Use `brew`
 - [ ] jq `jq`
 - [ ] coreutils `coreutils`
   - [ ] `PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"` ([ref](https://superuser.com/questions/476575/replace-os-xs-shell-commands-with-the-linux-versions/476594#476594))
+- [ ] nodejs `nvm`
+- [ ] ruby `ruby-install` and `chruby`
+- [ ] starship prompt `starship`
 
 Other
 
@@ -37,7 +41,8 @@ Set up standalone Jupyter
 
 pipx
 
-- [ ] black
-- [ ] flake8
-- [ ] magic-wormhole
-- [ ] cookiecutter
+- [ ] `awscli`
+- [ ] `black`
+- [ ] `flake8`
+- [ ] `magic-wormhole`
+- [ ] `cookiecutter`

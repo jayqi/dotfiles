@@ -1,2 +1,5 @@
 # .gitignore file for dotfiles repo, not global config
 .profile
+
+# Other
+.vscode

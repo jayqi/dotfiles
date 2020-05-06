@@ -5,6 +5,7 @@
     "workbench.iconTheme": "vscode-icons",
     "terminal.integrated.shell.osx": "/usr/local/bin/bash",
     "terminal.integrated.inheritEnv": false,
+    "terminal.integrated.fontFamily": "Meslo LG M for Powerline",
     "editor.renderWhitespace": "all",
     "editor.scrollBeyondLastLine": false,
     "editor.minimap.enabled": false,
@@ -13,8 +14,6 @@
     "files.insertFinalNewline": true,
     "files.trimFinalNewlines": true,
     "files.trimTrailingWhitespace": true,
-    "editor.formatOnType": true,
-    "editor.formatOnSave": true,
     // Python
     "python.formatting.provider": "black",
     "python.formatting.blackPath": "${env:HOME}/.local/bin/black",
@@ -30,11 +29,25 @@
         "**/requirements{/**,*}.{txt,in}": "pip-requirements"
     },
     // Javascript
-    "javascript.format.enable": false, // VS Code default formatter, don't need because we use eslint
     "eslint.format.enable": true,
+    "eslint.alwaysShowStatus": true,
+    "javascript.format.enable": false, // VS Code default formatter, don't need because we use eslint
+    "vetur.format.enable": true, // Vetur formatter, don't need because we use eslint
+    "vetur.validation.template": true,
     "[javascript]": {
         "editor.defaultFormatter": "dbaeumer.vscode-eslint"
     },
+    "[vue]": {
+        "editor.defaultFormatter": "octref.vetur",
+    },
+    // Misc
     "sqltools.telemetry": false,
-    "eslint.alwaysShowStatus": true
+    "window.zoomLevel": 0,
+    "python.dataScience.askForKernelRestart": false,
+    "[html]": {
+        "editor.defaultFormatter": "vscode.html-language-features"
+    },
+    "[jsonc]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    }
 }

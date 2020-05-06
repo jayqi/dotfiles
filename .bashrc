@@ -1,13 +1,18 @@
 if [[ $- == *i* ]]; then
-  echo "Sourcing .bashrc ..."
+    echo "Sourcing .bashrc ..."
 fi
 
-# Show git branch in prompt
-parse_git_branch() {
-    git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
-}
-PS1="\w \[\e[0;33;49m\]\$(parse_git_branch)\[\e[0;0m\]$ "
-export PS1="\[\033[32m\]\W\[\033[33m\]\$(parse_git_branch)\[\033[00m\] \$ "
+# starship prompt
+if starship --version 2>/dev/null; then
+    eval "$(starship init bash)"
+else
+    # Show git branch in prompt
+    parse_git_branch() {
+        git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+    }
+    PS1="\w \[\e[0;33;49m\]\$(parse_git_branch)\[\e[0;0m\]$ "
+    export PS1="\[\033[32m\]\W\[\033[33m\]\$(parse_git_branch)\[\033[00m\] \$ "
+fi
 
 
 ## LS ALIASES ##

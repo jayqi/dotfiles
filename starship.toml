@@ -1,0 +1,6 @@
+[time]
+disabled = false
+style = "dimmed bold yellow"
+
+[conda]
+symbol = "Ⓒ "
