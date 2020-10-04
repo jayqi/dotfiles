@@ -30,8 +30,12 @@ Use `brew`
 - [ ] ruby `ruby-install` and `chruby`
 - [ ] starship prompt `starship`
 
-Other
+## Python
 
+Having both pyenv and conda. ([ref](https://stackoverflow.com/a/58045984/5957621))
+
+- [ ] pyenv `brew install pyenv`
+- [ ] pyenv-virtualenv `brew install pyenv-virtualenv`
 - [ ] miniconda ([link](https://docs.conda.io/en/latest/miniconda.html))
 
 Set up standalone Jupyter
@@ -42,7 +46,6 @@ Set up standalone Jupyter
 pipx
 
 - [ ] `awscli`
-- [ ] `black`
-- [ ] `flake8`
 - [ ] `magic-wormhole`
 - [ ] `cookiecutter`
+- [ ] `quickhttp`
