@@ -6,23 +6,31 @@ Things to install on a new machine.
 
 - [ ] Google Chrome
 
-Use `brew cask`
+Use `brew cask install`
 
 - [ ] iTerm2 `iterm2`
-- [ ] Visual Studio Code `visual-studio-code`
+- [ ] docker `docker`
+- [ ] GrandPerspective `grandperspective`
+- [ ] Java `java`
+- [ ] KeepingYouAwake `keepingyouawake`
+- [ ] Maccy `maccy`
+- [ ] Paintbrush `paintbrush`
+- [ ] QuickLook-JSON `quicklook-json` 
+- [ ] QuickLook-Stephen `qlstephen`
+- [ ] rectangle `rectangle`
+- [ ] R `r`
 - [ ] RStudio `rstudio`
 - [ ] Slack `slack`
-- [ ] KeepingYouAwake `keepingyouawake`
-- [ ] rectangle `rectangle`
-- [ ] docker `docker`
-- [ ] Java `java`
+- [ ] Spotify `spotify`
+- [ ] SpotMenu `spotmenu`
+- [ ] Visual Studio Code `visual-studio-code`
 
 ## Programs
 
-Use `brew`
+Use `brew install`
 
 - [ ] git `git`
-- [ ] R `r`
+- [ ] GitHub CLI `gh`
 - [ ] jq `jq`
 - [ ] coreutils `coreutils`
   - [ ] `PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"` ([ref](https://superuser.com/questions/476575/replace-os-xs-shell-commands-with-the-linux-versions/476594#476594))
@@ -46,6 +54,7 @@ Set up standalone Jupyter
 pipx
 
 - [ ] `awscli`
-- [ ] `magic-wormhole`
 - [ ] `cookiecutter`
+- [ ] `magic-wormhole`
+- [ ] `python-dotenv`
 - [ ] `quickhttp`
