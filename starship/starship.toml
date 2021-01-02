@@ -2,5 +2,8 @@
 disabled = false
 style = "dimmed bold yellow"
 
+[aws]
+symbol = "☁️  "
+
 [conda]
 symbol = "Ⓒ "
