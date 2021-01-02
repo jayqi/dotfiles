@@ -3,7 +3,7 @@ disabled = false
 style = "dimmed bold yellow"
 
 [aws]
-symbol = "☁ "
+symbol = "☁️ "
 
 [conda]
 symbol = "Ⓒ "
