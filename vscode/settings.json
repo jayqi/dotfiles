@@ -5,29 +5,36 @@
     "workbench.iconTheme": "vscode-icons",
     "terminal.integrated.shell.osx": "/usr/local/bin/bash",
     "terminal.integrated.inheritEnv": false,
-    "terminal.integrated.fontFamily": "Meslo LG M for Powerline",
     "editor.renderWhitespace": "all",
     "editor.scrollBeyondLastLine": false,
     "editor.minimap.enabled": false,
+    // Font
+    "editor.fontFamily": "'Jetbrains Mono Slashed', Menlo, Monaco, 'Courier New', monospace",
+    "editor.fontSize": 13,
+    "terminal.integrated.fontFamily": "Jetbrains Mono Slashed",
+    "terminal.integrated.fontSize": 13,
+    "terminal.integrated.lineHeight": 1.2,
     // General auto-formatting
     "files.autoSave": "onFocusChange",
     "files.insertFinalNewline": true,
     "files.trimFinalNewlines": true,
     "files.trimTrailingWhitespace": true,
     // Python
-    "python.formatting.provider": "black",
-    "python.formatting.blackPath": "${env:HOME}/.local/bin/black",
     "[python]": {
         "editor.rulers": [
             88
-        ]
+        ],
+        "editor.fontLigatures": true
     },
+    "python.formatting.provider": "black",
     "autoDocstring.docstringFormat": "google",
     "files.associations": {
         "**/templates/*.html": "django-html",
         "**/templates/*": "django-txt",
         "**/requirements{/**,*}.{txt,in}": "pip-requirements"
     },
+    "jupyter.askForKernelRestart": false,
+    "python.showStartPage": false,
     // Javascript
     "eslint.format.enable": true,
     "eslint.alwaysShowStatus": true,
@@ -43,9 +50,11 @@
     // Misc
     "sqltools.telemetry": false,
     "window.zoomLevel": 0,
-    "python.dataScience.askForKernelRestart": false,
     "[html]": {
         "editor.defaultFormatter": "vscode.html-language-features"
+    },
+    "[json]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
     },
     "[jsonc]": {
         "editor.defaultFormatter": "vscode.json-language-features"
