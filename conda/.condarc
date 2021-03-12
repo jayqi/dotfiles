@@ -3,3 +3,6 @@ channels:
   - conda-forge
   - defaults
 auto_activate_base: false
+create_default_packages:
+  - python=3.8
+  - reprexlite
