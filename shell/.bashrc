@@ -46,3 +46,5 @@ bind "set menu-complete-display-prefix on"
 
 # ignore successive duplicates in history
 export HISTCONTROL=ignoredups
+
+export EDITOR=nano
