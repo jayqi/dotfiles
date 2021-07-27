@@ -1,3 +1,5 @@
+command_timeout = 1000
+
 [time]
 disabled = false
 style = "dimmed bold yellow"

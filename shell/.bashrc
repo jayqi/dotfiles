@@ -3,7 +3,7 @@ if [[ $- == *i* ]]; then
 fi
 
 # starship prompt
-if starship --version 2>/dev/null; then
+if starship -V 2>/dev/null; then
     eval "$(starship init bash)"
 else
     # Show git branch in prompt
@@ -14,6 +14,10 @@ else
     export PS1="\[\033[32m\]\W\[\033[33m\]\$(parse_git_branch)\[\033[00m\] \$ "
 fi
 
+# pyenv
+if pyenv -v 2>/dev/null; then
+    eval "$(pyenv init -)"
+fi
 
 ## LS ALIASES ##
 
@@ -48,3 +52,8 @@ bind "set menu-complete-display-prefix on"
 export HISTCONTROL=ignoredups
 
 export EDITOR=nano
+
+export MAMBA_NO_BANNER=true
+
+# list AWS profiles
+alias aws_list_profiles="grep '^\[.*\]$' ~/.aws/credentials | tr -d []"
