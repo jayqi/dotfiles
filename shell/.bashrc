@@ -57,3 +57,22 @@ export MAMBA_NO_BANNER=true
 
 # list AWS profiles
 alias aws_list_profiles="grep '^\[.*\]$' ~/.aws/credentials | tr -d []"
+
+# convenience alias for mike
+mike() {
+    if [[ -f mkdocs.yml ]]; then
+        command mike "$@"
+    else
+        (cd docs && command mike "$@")
+    fi
+}
+
+# prevent accidentally pip installing into conda base env
+pip() {
+    if [[ "$(which pip)" == "$HOME/miniconda3/bin/pip" ]] && [[ "$1" == "install" ]]; then
+        echo "ERROR: Base environment pip is active."
+        (exit 1) && true
+    else
+        command pip "$@"
+    fi
+}
