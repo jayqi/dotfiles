@@ -4,7 +4,6 @@ channels:
   - defaults
 auto_activate_base: false
 create_default_packages:
-  - python=3.8
+  - python=3.11
   - reprexlite
 show_banner: false
-
