@@ -14,9 +14,10 @@ else
     export PS1="\[\033[32m\]\W\[\033[33m\]\$(parse_git_branch)\[\033[00m\] \$ "
 fi
 
-# pyenv
-if pyenv -v 2>/dev/null; then
-    eval "$(pyenv init -)"
+# rtx runtime manager
+if rtx -v &>/dev/null; then
+    echo rtx $(rtx -v)
+    eval "$(rtx activate bash)"
 fi
 
 ## LS ALIASES ##
