@@ -1,8 +1,15 @@
+# Global .gitconfig
 [user]
 	name = Jay Qi
 	email = jayqi@users.noreply.github.com
+[gpg]
+	format = ssh
+[commit]
+	gpgsign = true
+[tag]
+	gpgsign = true
 [core]
-	excludesfile = ~/.gitignore_global
+	excludesfile = ~/.config/git/ignore
 	editor = nano
 [color]
 	ui = true
