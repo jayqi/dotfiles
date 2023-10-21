@@ -1,3 +1,8 @@
+# : "${XDG_CONFIG_HOME:="$HOME/.config"}"
+# : "${XDG_CACHE_HOME:="$HOME/.cache"}"
+# : "${XDG_DATA_HOME:="$HOME/.local/share"}"
+# : "${XDG_STATE_HOME:="$HOME/.local/state"}"
+
 if [[ $- == *i* ]]; then
     echo "Sourcing .bashrc ..."
 fi
@@ -68,12 +73,53 @@ mike() {
     fi
 }
 
-# prevent accidentally pip installing into conda base env
+# Prevent accidentally pip installing into global or base environment
 pip() {
-    if [[ "$(which pip)" == "$HOME/miniconda3/bin/pip" ]] && [[ "$1" == "install" ]]; then
-        echo "ERROR: Base environment pip is active."
-        (exit 1) && true
-    else
-        command pip "$@"
+    local active_pip=$(which pip)
+    if [[ -z $active_pip ]]; then
+        echo "pip: command not found"
+        return 1
     fi
+    if [[ $(dirname $active_pip) != $(dirname $(which python)) ]]; then
+        echo "ERROR: Active pip does not match active python."
+        echo '$(which pip)='$active_pip
+        echo '$(which python)='$(which python)
+        return 1
+    fi
+    if [[ "$CONDA_SHLVL" != "0" && $(dirname $active_pip) != "$CONDA_PREFIX/bin" ]]; then
+        echo "ERROR: Active pip does not match active conda environment."
+        echo '$(which pip)='$active_pip
+        echo '$CONDA_PREFIX='$CONDA_PREFIX
+        return 1
+    fi
+    if [[ "$1" == "install" ]]; then
+        # Check if we're using a base environment pip
+        if [[ ! -z $VIRTUAL_ENV ]]; then
+            # Normal virtualenv is active
+            :
+        elif [[ "$CONDA_SHLVL" != 0 ]]; then
+            # conda environment is active
+            if [[ $(dirname $active_pip) == $(dirname $CONDA_PYTHON_EXE) ]]; then
+                # pip belongs to base conda environment
+                echo "ERROR: Base conda environment pip is active."
+                echo '$(which pip)='$active_pip
+                return 1
+            else
+                # pip belongs to some other environment
+                :
+            fi
+        else
+            # No virtual environment active
+            echo "ERROR: Active pip not in a virtual environment."
+            echo '$(which pip)='$active_pip
+            return 1
+        fi
+    fi
+    command pip "$@"
 }
+
+## XDG
+# R
+export R_HOME_USER="${XDG_CONFIG_DIR:-"$HOME/.config"}/R"
+export R_PROFILE_USER="${XDG_CONFIG_DIR:-"$HOME/.config"}/R/profile"
+export R_HISTFILE="${XDG_CONFIG_DIR:-"$HOME/.config"}/R/history"
