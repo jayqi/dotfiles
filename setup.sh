@@ -1,23 +1,27 @@
-mv ~/.profile shell/.profile
+: "${REPO_ROOT:="$(pwd)"}"
+
+mv ~/.profile $REPO_ROOT/shell/.profile
 
 mkdir ~/.dotfiles_bk
 mv ~/.bash_profile ~/.dotfiles_bk/
 mv ~/.bashrc ~/.dotfiles_bk/
 
 # symlinks
-ln -s --relative shell/.bash_profile ~/.bash_profile
-ln -s --relative shell/.bashrc ~/.bashrc
-ln -s --relative shell/.profile ~/.profile
+ln -s $REPO_ROOT/shell/.bash_profile ~/.bash_profile
+ln -s $REPO_ROOT/shell/.bashrc ~/.bashrc
+ln -s $REPO_ROOT/shell/.profile ~/.profile
 if [[ "$OSTYPE" == "darwin"* ]]; then
-    ln -s --relative shell/.macos ~/.macos
+    ln -s $REPO_ROOT/shell/.macos ~/.macos
 fi
 
 # git
-ln -s --relative git/.gitconfig ~/.gitconfig
-ln -s --relative git/.gitignore_global ~/.gitignore_global
+mkdir ~/.config/git
+ln -s $REPO_ROOT/git/config ~/.config/git/config
+ln -s $REPO_ROOT/git/ignore ~/.config/git/ignore
 
 # starship prompt
-ln -s --relative starship/starship.toml ~/.config/starship.toml
+ln -s $REPO_ROOT/starship/starship.toml ~/.config/starship.toml
 
 # conda
-ln -s --relative conda/.condarc ~/.condarc
+mkdir ~/.config/conda
+ln -s $REPO_ROOT/conda/.condarc ~/.config/conda/condarc
