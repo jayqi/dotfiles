@@ -1,19 +1,30 @@
 {
     "telemetry.enableTelemetry": false,
     "telemetry.enableCrashReporter": false,
-    "workbench.colorTheme": "One Dark Pro",
-    "workbench.iconTheme": "vscode-icons",
     "terminal.integrated.shell.osx": "/usr/local/bin/bash",
     "terminal.integrated.inheritEnv": false,
-    "editor.renderWhitespace": "all",
-    "editor.scrollBeyondLastLine": false,
-    "editor.minimap.enabled": false,
+    // Window
+    "window.title": "${rootName}",
+    "window.titleBarStyle": "native",
+    "editor.stickyScroll.enabled": true,
+    "window.nativeTabs": true,
     // Font
     "editor.fontFamily": "'Jetbrains Mono Slashed', Menlo, Monaco, 'Courier New', monospace",
     "editor.fontSize": 13,
-    "terminal.integrated.fontFamily": "Jetbrains Mono Slashed",
+    "terminal.integrated.fontFamily": "Jetbrains Mono NL Slashed",
     "terminal.integrated.fontSize": 13,
     "terminal.integrated.lineHeight": 1.2,
+    // Theme
+    "workbench.preferredDarkColorTheme": "One Dark Pro",
+    "workbench.preferredLightColorTheme": "Atom One Light",
+    "workbench.colorTheme": "One Dark Pro",
+    "workbench.iconTheme": "vscode-icons",
+    "window.autoDetectColorScheme": true,
+    // Editor
+    "editor.bracketPairColorization.enabled": true,
+    "editor.renderWhitespace": "all",
+    "editor.scrollBeyondLastLine": false,
+    "editor.minimap.enabled": false,
     // General auto-formatting
     "files.autoSave": "onFocusChange",
     "files.insertFinalNewline": true,
@@ -27,6 +38,9 @@
         "editor.fontLigatures": true
     },
     "python.formatting.provider": "black",
+    "python.defaultInterpreterPath": "python",
+    "python.analysis.autoImportCompletions": false,
+    "python.analysis.typeCheckingMode": "basic",
     "autoDocstring.docstringFormat": "google",
     "files.associations": {
         "**/templates/*.html": "django-html",
@@ -34,33 +48,52 @@
         "**/requirements{/**,*}.{txt,in}": "pip-requirements"
     },
     "jupyter.askForKernelRestart": false,
-    "python.showStartPage": false,
+    "python.autoComplete.extraPaths": [],
+    "python.analysis.extraPaths": [],
+    "python.terminal.activateEnvInCurrentTerminal": true,
+    "ruff.importStrategy": "fromEnvironment",
+    "notebook.cellToolbarLocation": {
+        "default": "right",
+        "jupyter-notebook": "left"
+    },
+    "workbench.editorAssociations": {
+        "*.ipynb": "jupyter-notebook"
+    },
     // Javascript
     "eslint.format.enable": true,
-    "eslint.alwaysShowStatus": true,
-    "javascript.format.enable": false, // VS Code default formatter, don't need because we use eslint
-    "vetur.format.enable": true, // Vetur formatter, don't need because we use eslint
-    "vetur.validation.template": true,
     "[javascript]": {
-        "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+        "editor.defaultFormatter": "vscode.typescript-language-features"
     },
     "[vue]": {
         "editor.defaultFormatter": "octref.vetur",
     },
-    // Misc
-    "sqltools.telemetry": false,
-    "window.zoomLevel": 0,
+    // HTML
     "[html]": {
         "editor.defaultFormatter": "vscode.html-language-features"
     },
+    // JSON
     "[json]": {
         "editor.defaultFormatter": "vscode.json-language-features"
     },
     "[jsonc]": {
         "editor.defaultFormatter": "vscode.json-language-features"
     },
-    "markdownlint.config": {
-        "MD013": false,
-        "MD026": false
-    }
+    // Markdown
+    // TOML
+    "[toml]": {
+        "editor.defaultFormatter": "tamasfe.even-better-toml"
+    },
+    "evenBetterToml.formatter.allowedBlankLines": 1,
+    "evenBetterToml.formatter.columnWidth": 99,
+    "evenBetterToml.formatter.arrayTrailingComma": true,
+    "evenBetterToml.formatter.arrayAutoExpand": false,
+    "evenBetterToml.formatter.arrayAutoCollapse": false,
+    // GitHub Actions
+    "[github-actions-workflow]": {
+        "editor.tabSize": 2
+    },
+    // Misc
+    "diffEditor.ignoreTrimWhitespace": false,
+    "editor.accessibilitySupport": "off",
+    "redhat.telemetry.enabled": false
 }
