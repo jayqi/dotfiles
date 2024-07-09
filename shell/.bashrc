@@ -19,10 +19,12 @@ else
     export PS1="\[\033[32m\]\W\[\033[33m\]\$(parse_git_branch)\[\033[00m\] \$ "
 fi
 
-# rtx runtime manager
-if rtx -v &>/dev/null; then
-    echo rtx $(rtx -v)
-    eval "$(rtx activate bash)"
+# mise runtime manager
+if mise -v &>/dev/null; then
+    echo mise $(mise -v)
+    eval "$(mise activate bash)"
+    # export PATH="${XDG_DATA_HOME:-$HOME/.local/share}/mise/shims:$PATH"
+    export RTX_EXPERIMENTAL=1
 fi
 
 ## LS ALIASES ##
@@ -120,6 +122,6 @@ pip() {
 
 ## XDG
 # R
-export R_HOME_USER="${XDG_CONFIG_DIR:-"$HOME/.config"}/R"
-export R_PROFILE_USER="${XDG_CONFIG_DIR:-"$HOME/.config"}/R/profile"
-export R_HISTFILE="${XDG_CONFIG_DIR:-"$HOME/.config"}/R/history"
+export R_HOME_USER="${XDG_CONFIG_DIR:-$HOME/.config}/R"
+export R_PROFILE_USER="${XDG_CONFIG_DIR:-$HOME/.config}/R/profile"
+export R_HISTFILE="${XDG_CONFIG_DIR:-$HOME/.config}/R/history"
