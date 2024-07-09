@@ -8,16 +8,35 @@
 	gpgsign = true
 [tag]
 	gpgsign = true
+[credential]
+	helper = osxkeychain
+# Usage settings
+[branch]
+	sort = -committerdate
 [core]
 	excludesfile = ~/.config/git/ignore
 	editor = nano
 [color]
 	ui = true
-[status]
-	showUntrackedFiles = all
-[credential]
-	helper = osxkeychain
-[pull]
-	ff = only
+[diff]
+	algorithm = histogram
+	colorMoved = default
 [init]
 	defaultBranch = main
+[merge]
+	conflictstyle = zdiff3
+[pull]
+	ff = only
+[push]
+	autoSetupRemote = true
+[status]
+	showUntrackedFiles = all
+# difftool
+[diff]
+	tool = difftastic
+[difftool]
+	prompt = false
+[difftool "difftastic"]
+	cmd = difft "$LOCAL" "$REMOTE"
+[pager]
+	difftool = true
