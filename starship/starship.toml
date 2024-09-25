@@ -1,11 +1,16 @@
-command_timeout = 1000
-
 [time]
 disabled = false
 style = "dimmed bold yellow"
 
 [aws]
-symbol = "☁️ "
+symbol = "󰸏 "
+
+[azure]
+symbol = " "
+disabled = false
+[azure.subscription_aliases]
+"Zamba Cloud Sponsored Subscription" = "Zamba Cloud"
+"DrivenData Paid Subscription" = "DrivenData"
 
 [conda]
 symbol = "Ⓒ "
