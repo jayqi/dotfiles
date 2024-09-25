@@ -8,8 +8,7 @@
 	gpgsign = true
 [tag]
 	gpgsign = true
-[credential]
-	helper = osxkeychain
+
 # Usage settings
 [branch]
 	sort = -committerdate
@@ -31,6 +30,7 @@
 	autoSetupRemote = true
 [status]
 	showUntrackedFiles = all
+
 # difftool
 [diff]
 	tool = difftastic
