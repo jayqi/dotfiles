@@ -8,18 +8,24 @@ fi
 # Ensure XDG base directory
 export XDG_CONFIG_HOME="${XDG_CONFIG_HOME:-$HOME/.config}"
 
+
+# Always load environment setup
+if [[ -r "$XDG_CONFIG_HOME/bash/env.bash" ]]; then
+  source "$XDG_CONFIG_HOME/bash/env.bash"
+fi
+
 # Only run the rest in interactive shells
 case $- in
   *i*) ;;
   *) return ;;
 esac
 
-# Load main XDG-managed bash config
-if [[ -r "$XDG_CONFIG_HOME/bash/bashrc" ]]; then
-  source "$XDG_CONFIG_HOME/bash/bashrc"
+# Interactive-only setup
+if [[ -r "$XDG_CONFIG_HOME/bash/interactive.bash" ]]; then
+  source "$XDG_CONFIG_HOME/bash/interactive.bash"
 fi
 
-# Load machine-specific overrides (NOT tracked)
+# Load machine-local overrides (NOT tracked)
 if [[ -r "$HOME/.bashrc.local" ]]; then
   source "$HOME/.bashrc.local"
 fi
