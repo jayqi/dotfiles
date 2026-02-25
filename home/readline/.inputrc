@@ -31,8 +31,6 @@ set mark-symlinked-directories on
 # Make up/down search through history based on current input
 "\e[A": history-search-backward
 "\e[B": history-search-forward
-# Ignore duplicate history entries
-set history-ignore-dups on
 # Prevent cursor from moving when navigating history
 set history-preserve-point on
 
