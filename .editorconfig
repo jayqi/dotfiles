@@ -1,0 +1,7 @@
+[{.bash*,*.bash}]
+indent_style = space
+indent_size = 2
+shell_variant = bash
+
+space_redirects = true
+switch_case_indent = true

@@ -1,13 +1,12 @@
 if [[ $- != *i* ]]; then
-    >&2 echo "Non-interactive shell: skipping .bashrc ..."
-    return
+  >&2 echo "Non-interactive shell: skipping .bashrc ..."
+  return
 else
-    >&2 echo "Sourcing .bashrc ..."
+  >&2 echo "Sourcing .bashrc ..."
 fi
 
 # Ensure XDG base directory
 export XDG_CONFIG_HOME="${XDG_CONFIG_HOME:-$HOME/.config}"
-
 
 # Always load environment setup
 if [[ -r "$XDG_CONFIG_HOME/bash/env.bash" ]]; then
