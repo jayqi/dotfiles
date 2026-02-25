@@ -1,18 +1,10 @@
 # dotfiles
 
-My personal dotfiles.
+Personal dotfiles, configuration, and environment setup.
 
-Bash file usage follows convention described in [this StackExchange answer](https://superuser.com/a/789465).
+## Dotfiles management
 
-System files:
-
-- `.bash_profile` - loads other files
-- `.bashrc` - stuff used for interactive sessions
-- `.macos` - macOS-specific stuff
-
-This setup assumes that a separate `.profile` on the individual system with paths and stuff to installed things.
-
-Others:
-
-- `git/` - git global configuration files
-- `.condarc` - conda configuration files
+- Dotfiles live in [`home/`](/home/)
+- Managed with [GNU Stow](https://www.gnu.org/software/stow/)
+- [`dotfiles.sh`](/dotfiles.sh) is a setup script wrapping Stow that installs all dotfiles
+- Follows XDG Base Directories conventions where possible
