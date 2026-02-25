@@ -1,12 +1,14 @@
-if [[ $- != *i* ]]; then
-  >&2 echo "Non-interactive shell: skipping .bashrc ..."
-  return
-else
-  >&2 echo "Sourcing .bashrc ..."
-fi
-
 # Ensure XDG base directory
 export XDG_CONFIG_HOME="${XDG_CONFIG_HOME:-$HOME/.config}"
+
+STARTUP_LOGGING_SH="$XDG_CONFIG_HOME/bash/startup-logging.bash"
+if [[ -r "$STARTUP_LOGGING_SH" ]]; then
+  source "$STARTUP_LOGGING_SH"
+else
+  startup_log() { :; }
+fi
+
+startup_log "Sourcing .bashrc ..."
 
 # Always load environment setup
 if [[ -r "$XDG_CONFIG_HOME/bash/env.bash" ]]; then
@@ -14,10 +16,7 @@ if [[ -r "$XDG_CONFIG_HOME/bash/env.bash" ]]; then
 fi
 
 # Only run the rest in interactive shells
-case $- in
-  *i*) ;;
-  *) return ;;
-esac
+[[ $- == *i* ]] || return
 
 # Interactive-only setup
 if [[ -r "$XDG_CONFIG_HOME/bash/interactive.bash" ]]; then
@@ -29,9 +28,9 @@ if [[ -r "$HOME/.bashrc.local" ]]; then
   source "$HOME/.bashrc.local"
 fi
 
->&2 echo "PATH=${PATH}"
+startup_log "PATH=${PATH}"
 
 if command -v fastfetch >/dev/null 2>&1; then
-  >&2 echo ""
-  >&2 fastfetch
+  startup_log ""
+  fastfetch > /dev/tty
 fi
