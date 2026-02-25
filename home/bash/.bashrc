@@ -23,3 +23,8 @@ fi
 if [[ -r "$HOME/.bashrc.local" ]]; then
   source "$HOME/.bashrc.local"
 fi
+
+>&2 echo "PATH=${PATH}"
+
+>&2 echo ""
+>&2 fastfetch
