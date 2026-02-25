@@ -10,7 +10,7 @@
 
 # Enable signing with 1Password if the signer exists
 [includeIf "command:test -x /Applications/1Password.app/Contents/MacOS/op-ssh-sign"]
-	path = ~/.config/git/signing-1password.conf
+	path = ~/.config/git/config-signing-1password.conf
 
 # Usage settings
 [branch]
@@ -36,4 +36,4 @@
 
 # Enable difftastic as difftool if difft is installed
 [includeIf "command:command -v difft >/dev/null 2>&1"]
-	path = ~/.config/git/difftastic.conf
+	path = ~/.config/git/config-difftastic.conf
