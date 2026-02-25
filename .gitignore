@@ -1,5 +1,8 @@
 # .gitignore file for dotfiles repo, not global config
-.profile
 
-# Other
+# Machine-local dotfile overrides (NOT tracked)
+# Should be any file ending in .local, e.g. .bashrc.local, .vimrc.local, etc.
+*.local
+
+# Local editor config directories
 .vscode
