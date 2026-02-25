@@ -6,3 +6,4 @@
 .rtx.toml
 .mise.toml
 .venv*
+.worktrees
