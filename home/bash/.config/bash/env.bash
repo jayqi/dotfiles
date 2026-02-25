@@ -1,6 +1,6 @@
 # Run for all shells
 
-echo "Sourcing $XDG_CONFIG_HOME/bash/env.bash ..."
+startup_log "Sourcing $XDG_CONFIG_HOME/bash/env.bash ..."
 
 # Sentinel for running only once per shell
 if [[ -n "${__ENV_BASH_LOADED:-}" ]]; then
