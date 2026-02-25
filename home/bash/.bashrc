@@ -31,5 +31,7 @@ fi
 
 >&2 echo "PATH=${PATH}"
 
->&2 echo ""
->&2 fastfetch
+if command -v fastfetch >/dev/null 2>&1; then
+  >&2 echo ""
+  >&2 fastfetch
+fi
