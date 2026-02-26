@@ -56,3 +56,8 @@ export PIPENV_VENV_IN_PROJECT=1
 
 # Poetry
 export POETRY_VIRTUALENVS_IN_PROJECT=true
+
+## APP DIRECTORIES
+
+# OpenAI Codex
+export CODEX_HOME="$XDG_CONFIG_HOME/codex"
