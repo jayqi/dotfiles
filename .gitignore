@@ -6,3 +6,6 @@
 
 # Local editor config directories
 .vscode
+
+# Logs
+*.log
