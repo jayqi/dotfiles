@@ -14,7 +14,7 @@ BACKUP_ROOT="$HOME/.dotfiles_backup"
 
 [[ $# -eq 0 ]] || fail "This script does not accept arguments. Run './setup.sh'."
 
-if ! command -v stow >/dev/null 2>&1; then
+if ! command -v stow > /dev/null 2>&1; then
   fail "GNU stow is required but not installed or not in PATH."
 fi
 

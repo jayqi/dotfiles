@@ -30,7 +30,7 @@ fi
 
 startup_log "PATH=${PATH}"
 
-if command -v fastfetch >/dev/null 2>&1; then
+if command -v fastfetch > /dev/null 2>&1; then
   startup_log ""
   fastfetch > /dev/tty
 fi
