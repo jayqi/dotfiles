@@ -10,12 +10,19 @@ home_bash_files := `
 bash_home := "{{invocation_directory()}}/home/bash"
 bash_xdg_config_home := "{{invocation_directory()}}/home/bash/.config"
 
+# Print this help message
+help:
+  @just --list
+
+# Lint all shell scripts
 lint: lint-dotfiles-sh lint-home-bash
 
+# Lint dotfiles.sh
 lint-dotfiles-sh:
   @shellcheck --external-sources --shell=bash dotfiles.sh
   @shfmt -d dotfiles.sh
 
+# Lint all bash scripts in home/bash
 lint-home-bash:
   #!/usr/bin/env bash
   set -euo pipefail
@@ -28,5 +35,6 @@ lint-home-bash:
     {{home_bash_files}}
   shfmt -d {{home_bash_files}}
 
+# Format all shell scripts
 format:
   @shfmt -w dotfiles.sh {{home_bash_files}}
