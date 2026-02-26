@@ -1,5 +1,3 @@
-channel_priority: strict
 channels:
   - conda-forge
 auto_activate_base: false
-show_banner: false

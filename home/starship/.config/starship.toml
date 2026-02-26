@@ -2,15 +2,23 @@
 disabled = false
 style = "dimmed bold yellow"
 
-[aws]
-symbol = "󰸏 "
-
-[azure]
-symbol = " "
-disabled = false
-[azure.subscription_aliases]
-"Zamba Cloud Sponsored Subscription" = "Zamba Cloud"
-"DrivenData Paid Subscription" = "DrivenData"
+[python]
+python_binary = ["python"]
+symbol = ' '
 
 [conda]
-symbol = "Ⓒ "
+ignore_base = false
+
+[aws]
+symbol = ' '
+
+[gcloud]
+symbol = '󰊭 '
+detect_env_vars = [
+    "GOOGLE_APPLICATION_CREDENTIALS",
+    "GCLOUD_CONFIG",
+]
+format = 'on $symbol$active '
+
+[azure]
+symbol = ' '
