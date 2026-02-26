@@ -27,7 +27,10 @@ for dir in "$STOW_DIR"/*; do
 done
 [[ ${#packages[@]} -gt 0 ]] || fail "No stow packages found in $STOW_DIR"
 
-STOW_FLAGS=(-R -v -t "$HOME")
+STOW_FLAGS=(-v -t "$HOME")
+if [[ "${DOTFILES_RESTOW:-0}" == "1" ]]; then
+  STOW_FLAGS=(-R "${STOW_FLAGS[@]}")
+fi
 
 run_stow() {
   local extra_flags=("$@")
