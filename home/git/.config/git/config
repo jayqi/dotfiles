@@ -3,14 +3,19 @@
 [user]
 	name = Jay Qi
 	email = jayqi@users.noreply.github.com
+    signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJ96rp6OPE/DwoSuRRzXD+wKxrnl8Z8gFwqIN1brOCYl
 [gpg]
 	format = ssh
 [gpg "ssh"]
 	allowedSignersFile = ~/.config/git/allowed_signers
+[commit]
+    gpgsign = true
+[tag]
+    gpgsign = true
 
 # Enable signing with 1Password if the signer exists
-[includeIf "command:test -x /Applications/1Password.app/Contents/MacOS/op-ssh-sign"]
-	path = ~/.config/git/config-signing-1password.conf
+[include]
+	path = ~/.config/git/config-1password.local
 
 # Usage settings
 [branch]
@@ -35,5 +40,5 @@
 	showUntrackedFiles = all
 
 # Enable difftastic as difftool if difft is installed
-[includeIf "command:command -v difft >/dev/null 2>&1"]
-	path = ~/.config/git/config-difftastic.conf
+[include]
+	path = ~/.config/git/config-difftastic.local
