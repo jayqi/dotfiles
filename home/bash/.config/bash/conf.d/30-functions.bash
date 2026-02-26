@@ -22,7 +22,7 @@ code() {
 
   # Check if the target is exactly $HOME or $HOME/repos.
   if [[ "$target" == "$HOME" || "$target" == "$HOME/repos" ]]; then
-    read -p "You're opening VS Code at $target. Continue? (y/N) " confirm
+    read -r -p "You're opening VS Code at $target. Continue? (y/N) " confirm
     [[ "$confirm" != [Yy]* ]] && return
   fi
 
@@ -31,6 +31,7 @@ code() {
 
 # Safety wrapper for `pip`
 # Prevent accidentally pip installing into global or base environment
+# shellcheck disable=SC2016
 pip() {
   local active_pip
   active_pip="$(type -P pip || true)"
@@ -102,7 +103,7 @@ mike() {
 }
 
 aws_list() {
-  grep '^\[.*\]$' $HOME/.aws/credentials | tr -d []
+  grep '^\[.*\]$' "$HOME/.aws/credentials" | tr -d []
 }
 
 aws_activate() {
