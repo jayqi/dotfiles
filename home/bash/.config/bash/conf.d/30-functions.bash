@@ -103,11 +103,11 @@ mike() {
 }
 
 aws_list() {
-  grep '^\[.*\]$' "$HOME/.aws/credentials" | tr -d []
+  grep '^\[.*\]$' "$HOME/.aws/credentials" | tr -d '[]'
 }
 
 aws_activate() {
-  export AWS_PROFILE="$@"
+  export AWS_PROFILE="${1:-}"
 }
 
 aws_deactivate() {
@@ -115,14 +115,14 @@ aws_deactivate() {
 }
 
 gcloud_list() {
-  find $HOME/.config/gcloud/credentials/ -type f -name "*.json" | while read -r file; do
+  find "$HOME"/.config/gcloud/credentials/ -type f -name "*.json" | while read -r file; do
     basename "${file}" .json
   done
 }
 
 gcloud_activate() {
-  export GCLOUD_CONFIG="$@"
-  gcloud config configurations activate $GCLOUD_CONFIG
+  export GCLOUD_CONFIG="${1:-}"
+  gcloud config configurations activate "$GCLOUD_CONFIG"
   gcloud auth application-default login
 }
 
