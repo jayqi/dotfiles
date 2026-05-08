@@ -61,3 +61,6 @@ export POETRY_VIRTUALENVS_IN_PROJECT=true
 
 # OpenAI Codex
 export CODEX_HOME="$XDG_CONFIG_HOME/codex"
+
+# Anthropic Claude
+export CLAUDE_CONFIG_DIR="$XDG_CONFIG_HOME/claude"

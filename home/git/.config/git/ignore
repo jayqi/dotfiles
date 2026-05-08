@@ -1,9 +1,19 @@
-# Global .gitignore
+## Global .gitignore
 
 *~
 .DS_Store
+
+# Local configs
 .vscode
 .rtx.toml
 .mise.toml
-.venv*
+
+# AI coding agents
+.claude
+**/.claude/settings.local.json
+.plans
 .worktrees
+
+# Local environment
+.venv*
+.ghtriage
