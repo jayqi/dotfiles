@@ -1,1 +1,2 @@
 python-preference = "managed"
+exclude-newer = "7 days"
