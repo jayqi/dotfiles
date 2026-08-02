@@ -3,6 +3,11 @@
 *~
 .DS_Store
 
+# My conventions
+.ignored
+.plans
+.worktrees
+
 # Local configs
 .vscode
 .rtx.toml
@@ -11,9 +16,9 @@
 # AI coding agents
 .claude
 **/.claude/settings.local.json
-.plans
-.worktrees
 
 # Local environment
 .venv*
+
+# Tools
 .ghtriage
