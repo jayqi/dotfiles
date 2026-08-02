@@ -1,11 +1,28 @@
 {
   "permissions": {
+    "deny": [
+      "Read(.env)",
+      "Read(.env.*)"
+    ],
     "allow": [
-      "Bash(cat *)",
-      "Bash(find *)",
-      "Bash(grep *)",
-      "Bash(* --version)",
-      "Bash(* --help *)"
+      "Bash(tree *)",
+      "Bash(realpath *)",
+      "Bash(basename *)",
+      "Bash(dirname *)",
+      "Bash(uniq *)",
+      "Bash(comm *)",
+      "Bash(sha256sum *)",
+      "Bash(date *)",
+      "Bash(uname *)",
+      "Bash(df -h *)",
+      "Bash(gh pr view *)",
+      "Bash(gh pr list *)",
+      "Bash(gh pr diff *)",
+      "Bash(gh issue view *)",
+      "Bash(gh issue list *)",
+      "Bash(gh run view *)",
+      "Bash(gh run list *)",
+      "Bash(gh repo view *)"
     ]
   },
   "theme": "auto",
