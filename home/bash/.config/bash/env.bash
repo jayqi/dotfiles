@@ -40,6 +40,11 @@ if [[ -d "$HOME/.docker/bin" ]]; then
   PATH="$HOME/.docker/bin:$PATH"
 fi
 
+# fnm for managing node versions
+if command -v fnm > /dev/null 2>&1; then
+  eval "$(fnm env --use-on-cd --shell bash)"
+fi
+
 ## EDITOR
 
 export EDITOR="nano"

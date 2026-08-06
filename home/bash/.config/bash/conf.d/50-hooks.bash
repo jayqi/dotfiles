@@ -10,6 +10,3 @@ CONDA_INIT_SH="${XDG_CONFIG_HOME:-$HOME/.config}/bash/conda.sh"
 if [[ -f "$CONDA_INIT_SH" ]]; then
   source "$CONDA_INIT_SH"
 fi
-
-# FNM / NODE
-eval "$(fnm env --use-on-cd --shell bash)"
