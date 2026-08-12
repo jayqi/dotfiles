@@ -13,6 +13,10 @@
 [tag]
     gpgsign = true
 
+# Disable any system credential helpers
+[credential]
+	helper =
+
 # Enable signing with 1Password if the signer exists
 [include]
 	path = ~/.config/git/config-1password.local
