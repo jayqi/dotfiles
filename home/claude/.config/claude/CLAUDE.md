@@ -23,3 +23,4 @@
 - **Don't test the absence of old behavior.** When behavior changes from X to Y, write tests that assert the new behavior (output equals Y), not tests that only rule out the old one (output does not equal X). Only keep a not-X check if X is a specific _shipped_ bug or edge case the implementation could regress into — not merely "what it used to do."
 - **Check the state**: I often cowork with agents in the repository interactively. Just because you haven't committed something or made a change because I said I would do it in a previous turn, doesn't mean the change hasn't happened. Check the repository or filesystem before assuming I haven't done it and then continuing to "remind" me.
 - **Commit signature**: When creating git commits, use "Assisted-by" instead of "Co-authored-by"
+- **User-level gitignore**: `.ignored` and `.plans` are gitignore-d at the user level.
