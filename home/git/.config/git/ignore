@@ -14,7 +14,8 @@
 .mise.toml
 
 # AI coding agents
-.claude
+.claude/*
+!.claude/skills/
 **/.claude/settings.local.json
 
 # Local environment
