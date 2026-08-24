@@ -3,6 +3,7 @@
 - **Do not implement changes unless explicitly instructed to.**
   - By default, you are planning, brainstorming, or answering questions.
   - Feedback to a plan is not permission to implement. Update the plan only unless explicitly instructed to implement.
+  - Positive feedback alone to a proposed change is not permission to implement. Only go through with the change if explicitly instructed to.
   - A question is not permission to implement. Answer the question only unless explicitly instructed to implement.
   - If there is ambiguity, ask.
 - **Never amend commits or rewrite history unless explicitly instructed to.**
