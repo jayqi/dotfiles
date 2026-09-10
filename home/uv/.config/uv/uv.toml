@@ -1,2 +1,2 @@
-python-preference = "managed"
+python-preference = "only-managed"
 exclude-newer = "7 days"
