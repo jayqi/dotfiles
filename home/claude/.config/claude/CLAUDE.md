@@ -6,7 +6,7 @@
   - Positive feedback alone to a proposed change is not permission to implement. Only go through with the change if explicitly instructed to.
   - A question is not permission to implement. Answer the question only unless explicitly instructed to implement.
   - If there is ambiguity, ask.
-- **Do not write to any external systems (includingn GitHub) unless explicitly instructed to.**
+- **Do not write to any external systems (including GitHub) unless explicitly instructed to.**
   - Do not open issues, open PRs, or submit comments to GitHub unless explicitly instructed to.
   - Feedback about how to organize work ("this should be an issue", "this should be two PRs", "this should be the same PR") is not permission to open an issue or open a PR. 
   - If there is ambiguity, ask.
