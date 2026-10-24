@@ -91,6 +91,16 @@ pip() {
   command pip "$@"
 }
 
+# Safety wrapper for `uv`
+# Prevent accidentally running `uv init` or `uv venv` at $HOME or $HOME/repos
+uv() {
+  if [[ ("$1" == "init" || "$1" == "venv") && ("$PWD" == "$HOME" || "$PWD" == "$HOME/repos") ]]; then
+    >&2 echo "ERROR: Refusing to run uv $1 in $PWD. Use 'command uv $1' to override."
+    return 1
+  fi
+  command uv "$@"
+}
+
 ## Convenience functions
 
 # Convenience wrapper for mike
